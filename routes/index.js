@@ -7,5 +7,5 @@ const {
 } = require('../middleware')
 
 router.post('/create',validate(validation.create),bookController.createBook)
-// router.post('/signup',validate(validation.signup),userController.signUpUser)
+router.post('/update',validate(validation.update),bookController.updateBook)
 module.exports = router
