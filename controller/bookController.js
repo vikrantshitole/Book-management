@@ -26,4 +26,12 @@ const getBooks = async(req, res, next) => {
         res.status(400).send(error)
     }
 }
-module.exports = {createBook,updateBook,getBooks}
+const getOneBook = async(req, res, next) => {
+    try {
+        const response = await bookService.getOneBook(req.params.id);
+        res.status(200).send(response);
+    } catch (error) {
+        res.status(400).send(error)
+    }
+}
+module.exports = {createBook,updateBook,getBooks,getOneBook}

@@ -44,4 +44,16 @@ const getBooks = () => {
         }
     })
 }
-module.exports = {createBook,updateBook,getBooks}
+const getOneBook = (id) => {
+    return new Promise(async(resolve,reject)=>{
+        try{
+            let book = await Book.findOne({_id:id})
+            resolve({book: book||{}})
+        }catch(err){
+            console.error(err);
+            reject({message: 'Error finding Book'})
+        }
+    })
+}
+
+module.exports = {createBook,updateBook,getBooks,getOneBook}
