@@ -55,5 +55,21 @@ const getOneBook = (id) => {
         }
     })
 }
+const deleteBook = (id) => {
+    return new Promise(async(resolve,reject)=>{
+        try{
+            let book = await Book.findOne({_id:id})
+            if (!book) {
+               return reject({message: 'Book does not exists.'})
+            }
+            
+            await Book.deleteOne({ _id:id })
+            return resolve({message: 'Book deleted Successfully'})
+        }catch(err){
+            console.error(err);
+            return reject({message: 'Error deleting Book'})
+        }
+    })
+}
 
-module.exports = {createBook,updateBook,getBooks,getOneBook}
+module.exports = {createBook,updateBook,getBooks,getOneBook,deleteBook}

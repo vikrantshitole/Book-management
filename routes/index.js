@@ -8,6 +8,7 @@ const {
 
 router.post('/create',validate(validation.create),bookController.createBook)
 router.post('/update',validate(validation.update),bookController.updateBook)
-router.post('/get',bookController.getBooks)
-router.post('/get/:id',bookController.getOneBook)
+router.get('/get',bookController.getBooks)
+router.get('/get/:id',bookController.getOneBook)
+router.delete('/delete/:id',bookController.deleteBook)
 module.exports = router
