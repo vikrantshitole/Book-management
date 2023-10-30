@@ -1,0 +1,56 @@
+#setup
+
+#step 1: cloning the repository
+git clone https://github.com/vikrantshitole/Book-management.git
+
+
+#step 2: installing the software
+install node
+
+#step 3: installing the dependencies of the project
+yarn 
+
+#step 4: running the project
+yarn start
+
+
+#Api
+
+#create:
+    #url : http://localhost:3000/book/create
+    #method : "POST
+    #payload: {
+        "name": "stu",
+        "description": "stustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustu",
+        "author": "viks",
+        "price": 50
+    }
+    #usage: To create a new book
+
+#update 
+    #url : http://localhost:3000/book/update
+    #method : "POST
+    #payload: {
+        "_id": "653fdb8d63d1346d8725c94e",
+        "name": "stu",
+        "description": "stustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustustu",
+        "author": "viks",
+        "price": 50
+    }
+    #usage: To update the book which is present in the database
+
+#get list of books
+    #url: http://localhost:3000/book/get
+    #method: get
+    #usage: To get list of all books in the database
+
+
+#get one books
+    #url: http://localhost:3000/book/get/:id
+    #method: get
+    #usage: To get specific books from the database
+
+#delete 
+    #url: http://localhost:3000/book/delete
+    #method: delete
+    #usage: To delete book  by its id from the database
